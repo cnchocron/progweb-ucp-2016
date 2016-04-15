@@ -67,18 +67,20 @@
         //respuestas
         html += '<div class="col-md-offset-3 col-md-6 pregunta-respuestas">';
         
-        html += '<form action="" method="get">';
+        
         
         for (i = 0; i < pregunta.respuestas.length; i++) {
             var r = pregunta.respuestas[i];
             html += '';
-            
-            html += '<input name="respuestaID" type="submit" class="btn btn-primary col-md-12 col-xs-12 " value="' + r.descripcion + ' " />';
+            html += '<form action="" method="get">';
+            html += '<input name="preguntaID" type="hidden" value="' + id +'" />';
+            html += '<input name="respuestaID" type="hidden" value="' + r.id +'" />';
+            html += '<input name="" type="submit" class="btn btn-primary col-md-12 col-xs-12 " value="' + r.descripcion+'" />';
 
-
+            html += '</form>';
             html += '';
         }
-        html += '</form>';
+        
         
         
 
