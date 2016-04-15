@@ -26,9 +26,9 @@
     
     self.preguntaArmar = function (id) {
         
-        
-        
-        var pregunta = {
+                
+        var preguntas = [ {
+
             id: 1,
             descripcion : '¿Cual es la moneda Oficial de Costa Rica?',
             respuestas : [
@@ -48,18 +48,47 @@
                     id: 4,
                     descripcion: 'Dolar Americano'
                 },
-            ]
-        };
+            ]}
+            ,
+
+            {
+                id: 2,
+                descripcion : '¿Cual es la moneda Oficial de Nicaragua?',
+                respuestas : [
+                    {
+                        id: 1,
+                        descripcion: 'Sol'
+                    },
+                    {
+                        id: 2,
+                        descripcion: 'Cordoba'
+                    },
+                    {
+                        id: 3,
+                        descripcion: 'Dolar Americano'
+                    },
+                    {
+                        id: 4,
+                        descripcion: 'Quetzal'
+                    },
+                ]
+            }
+        ];
+        
+        
+        var pregunta = preguntas[id];
+        
         
         var html = '';
         html += '<div class="row">';
         
         //titulo
-        html += '<div name="preguntaID" class="col-md-12 pregunta-titulo">';
+        html += '<div name="preguntaId" class="col-md-12 pregunta-titulo">';
         html += '<h2>';
         html += pregunta.descripcion;
         html += '</h2>';
         html += '</div>'; //fin de pregunta-titulo
+        
         
         
         
@@ -73,8 +102,8 @@
             var r = pregunta.respuestas[i];
             html += '';
             html += '<form action="" method="get">';
-            html += '<input name="preguntaID" type="hidden" value="' + id +'" />';
-            html += '<input name="respuestaID" type="hidden" value="' + r.id +'" />';
+            html += '<input name="preguntaId" type="hidden" value="' + id +'" />';
+            html += '<input name="respuestaId" type="hidden" value="' + r.id +'" />';
             html += '<input name="" type="submit" class="btn btn-primary col-md-12 col-xs-12 " value="' + r.descripcion+'" />';
 
             html += '</form>';
